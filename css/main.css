@@ -1,11 +1,45 @@
 html, body{ margin: 0; padding: 0; }
 
 body {
-    background: #ddd;
-}
+  overflow: visible !important;
+  background: -webkit-linear-gradient(90deg, #085078 10%, #85d8ce 150%);
+  background: -moz-linear-gradient(90deg, #085078 10%, #85d8ce 150%);
+  background: -ms-linear-gradient(90deg, #085078 10%, #85d8ce 150%);
+  background: -o-linear-gradient(90deg, #085078 10%, #85d8ce 150%);
+  background: linear-gradient(90deg, #085078 10%, #85d8ce 150%);
+  font-family: 'Roboto', sans-serif;
+ }
+
 
 #container{
     width: 900px;
     margin: 0 auto;
-    border: 1px solid white;
+}
+
+h1{
+    color: #fff;
+}
+
+h2{
+    color: #69c6d0;
+}
+
+.quote{
+    font-size: 12px;
+    color: #ddd;
+}
+
+.todolist{
+    display: grid;
+    grid-template-columns: 50px 610px 120px 50px 50px;
+    grid-gap: 5px;
+    color: #444;
+}
+
+.box {
+    background: #58a7af;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 110%;
 }
