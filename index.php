@@ -12,6 +12,9 @@
 И наслаждайтесь жизнью…</h2>
 <hr>
 <p class="quote">Жизнь может казаться ошеломительной, но ей не обязательно такой быть. To do list позволяет отслеживать все задачи в одном месте, чтобы вам было проще выполнять задуманное, сохраняя душевный покой.</p>
+<div class="addtolist">
+    <div class="add"><input type="text" id="add" name="add"></div>
+</div>
 <div class="todolist">
     <div class="box"><input type="checkbox" name="check"></div>
     <div class="box">Написать веб приложение To do list</div>

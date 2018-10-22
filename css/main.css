@@ -29,9 +29,21 @@ h2{
     color: #ddd;
 }
 
+.addtolist{
+    margin: 10px auto;
+}
+
+.addtolist input{
+    width: 98%;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background: #c8f7f1;
+}
+
 .todolist{
     display: grid;
-    grid-template-columns: 50px 615px 120px 50px 45px;
+    grid-template-columns: 50px 617px 120px 50px 45px;
     grid-gap: 5px;
     color: #444;
 }
