@@ -31,7 +31,7 @@ h2{
 
 .todolist{
     display: grid;
-    grid-template-columns: 50px 610px 120px 50px 50px;
+    grid-template-columns: 50px 615px 120px 50px 45px;
     grid-gap: 5px;
     color: #444;
 }
