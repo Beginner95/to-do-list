@@ -15,7 +15,7 @@
 <div class="addtolist">
     <div class="add"><input type="text" id="add" name="add" placeholder="Введите наименование задачи"></div>
 </div>
-<div class="todolist">
+<div class="todolist" id="list">
     <div class="box"><input type="checkbox" name="check"></div>
     <div class="box">Написать веб приложение To do list</div>
     <div class="box">20.10.2018</div>
