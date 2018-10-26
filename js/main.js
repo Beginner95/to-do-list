@@ -24,6 +24,13 @@
         }
     }
     
+    tasksList = _('list');
+    c(tasksList);
+    
+    function doId() {
+        return 42;
+    }
+    
     function c(str) {
         console.log(str);
     }
@@ -32,4 +39,4 @@
         return document.getElementById(el);
     }
     
-});
+})();
