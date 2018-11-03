@@ -39,4 +39,17 @@
         return document.getElementById(el);
     }
     
+    btn = _('add');
+    
+    btn.onclick = function() {
+        /*Будем производить запись в базу данных */
+    };
+    
+    
+    function addElement()
+    {
+        
+    }
+    
 })();
+
