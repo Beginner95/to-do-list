@@ -34,6 +34,10 @@
     function c(str) {
         console.log(str);
     }
+    
+    _('add').onclick = function(){
+        //code
+    }
 
     function _(el) {
         return document.getElementById(el);
