@@ -13,15 +13,16 @@
 <hr>
 <p class="quote">Жизнь может казаться ошеломительной, но ей не обязательно такой быть. To do list позволяет отслеживать все задачи в одном месте, чтобы вам было проще выполнять задуманное, сохраняя душевный покой.</p>
 <div class="addtolist">
-    <div class="add"><input type="text" id="in" name="add" placeholder="Введите наименование задачи"><button id="add">Добавить</button></div>
+    <div class="add"><input type="text" id="task" name="add" placeholder="Введите наименование задачи"><button onclick="newElement()" id="add">Добавить</button></div>
 </div>
-<div class="todolist" id="list">
-    <div class="box"><input type="checkbox" name="check"></div>
-    <div class="box">Написать веб приложение To do list</div>
-    <div class="box">20.10.2018</div>
-    <div class="box"><input type="checkbox" name="check"></div>
-    <div class="box"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-</div>
+<ul class="todolist" id="list">
+    <li class="box">
+        <input type="checkbox" name="check"> 
+        Написать веб приложение To do list 20.10.2018 
+        <input type="checkbox" name="check">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+    </li>
+</ul>
 </div>
 <script src="/js/fontawesome.min.js"></script>
 <script src="/js/main.js"></script>
