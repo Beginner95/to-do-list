@@ -1,4 +1,5 @@
 var myNodelist = getETN("li");
+var list = qS('#list');
 
 for (let i = 0; i < myNodelist.length; i++) {
     let span = cE("i");
@@ -15,9 +16,8 @@ for (let i = 0; i < close.length; i++) {
     }
 }
 
-var list = qS('#list');
 list.addEventListener('click', function(e) {
-    if (e.target.tagName === 'li') {
+    if (e.target.className === 'done') {
         e.target.classList.toggle('checked');
     }
 }, false);
