@@ -57,9 +57,14 @@ function newElement() {
     for (let i = 0; i < close.length; i++) {
         close[i].onclick = function() {
             let div = this.parentElement;
+            removeTask(div);
             div.style.display = "none";
         }
     }
+}
+
+function removeTask(i){
+    list.removeChild(i);
 }
 
 function formatDate(date) {
