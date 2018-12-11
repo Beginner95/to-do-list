@@ -25,12 +25,18 @@ list.addEventListener('click', function(e) {
 function newElement() {
     let li = cE("li");
     let inputValue = getId("task").value;
-    let t = cTN(inputValue);
+    let task = cTN(inputValue);
     let title = cE('span');
+    let date = cE('span');
+    
     title.className = 'title';
     li.className = 'box';
+    date.className = 'date';
     li.appendChild(title);
-    title.appendChild(t);
+    title.appendChild(task);
+    li.appendChild(date);
+    date.appendChild(cTN(formatDate(new Date())));
+    
     
     if (inputValue === '') {
         alert("You must write something!");
@@ -64,12 +70,9 @@ function formatDate(date) {
 
     let h = date.getHours();
     let m = date.getMinutes();
-    let s = date.getSeconds();
 
-    return dd + '.' + mm + '.' + yy + ' ' + h + ':' + m + ':' + s;
+    return dd + '.' + mm + '.' + yy + ' ' + h + ':' + m;
 }
-
-alert(formatDate(new Date()));
 
 function getId(id){
     return document.getElementById(id);
