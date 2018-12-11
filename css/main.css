@@ -76,12 +76,28 @@ h2{
 }
 
 .title{
-    border-right: 1px solid #fff;
-    border-left: 1px solid #fff;
-    margin: 0 5px;
-    padding: 0 5px;
+    border-bottom: 1px solid #fff;
+    font: 14px Verdana, sans-serif;
+    display: block;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.date{
+    font: 12px Verdana, sans-serif;
+}
+
+.done{
+    float: left;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 5px 50px 0 0;
+    cursor: pointer;
 }
 
 .fa-trash-o{
     float: right;
+    margin-top: 5px;
+    cursor: pointer;
 }
