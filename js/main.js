@@ -28,13 +28,17 @@ function newElement() {
     let task = cTN(inputValue);
     let title = cE('span');
     let date = cE('span');
+    let done = cE('div');
     
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
+    done.className = 'done';
     li.appendChild(title);
     title.appendChild(task);
+    li.appendChild(done);
     li.appendChild(date);
+    
     date.appendChild(cTN(formatDate(new Date())));
     
     
@@ -47,7 +51,7 @@ function newElement() {
     getId("task").value = "";
 
     let i = cE("i");
-    i.className = "fa fa-trash-o";
+    i.className = "fa fa-trash-o close";
     li.appendChild(i);
 
     for (let i = 0; i < close.length; i++) {
