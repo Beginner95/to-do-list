@@ -87,3 +87,7 @@ h2{
     margin: 0 5px;
     padding: 0 5px;
 }
+
+.fa-trash-o{
+    float: right;
+}
