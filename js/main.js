@@ -1,4 +1,4 @@
-var myNodelist = getETN("li");
+var myNodelist = getETN("LI");
 var list = qS('#list');
 
 for (let i = 0; i < myNodelist.length; i++) {
@@ -17,8 +17,9 @@ for (let i = 0; i < close.length; i++) {
 }
 
 list.addEventListener('click', function(e) {
-    if (e.target.className === 'done') {
-        e.target.classList.toggle('checked');
+    if (e.target.tagName === 'DIV') {
+        e.target.parentNode.classList.toggle('checked');
+        e.target.classList.toggle('fa-check')
     }
 }, false);
 
@@ -33,7 +34,7 @@ function newElement() {
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
-    done.className = 'done';
+    done.className = 'done fa';
     li.appendChild(title);
     title.appendChild(task);
     li.appendChild(done);
