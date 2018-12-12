@@ -106,3 +106,7 @@ h2{
 .fa{
     font-size: 14px !important;
 }
+
+.checked{
+    background: #155e81;
+}
