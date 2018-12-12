@@ -79,7 +79,9 @@ function formatDate(date) {
     let yy = date.getFullYear();
 
     let h = date.getHours();
+    if (h < 10) h = '0' + h;
     let m = date.getMinutes();
+    if (m < 10) m = '0' + m;
 
     return dd + '.' + mm + '.' + yy + ' ' + h + ':' + m;
 }
