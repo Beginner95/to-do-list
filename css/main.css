@@ -89,8 +89,9 @@ h2{
 
 .done{
     float: left;
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 12px;
+    padding: 2px;
     border: 2px solid #fff;
     margin: 5px 50px 0 0;
     cursor: pointer;
@@ -100,4 +101,8 @@ h2{
     float: right;
     margin-top: 5px;
     cursor: pointer;
+}
+
+.fa{
+    font-size: 14px !important;
 }
