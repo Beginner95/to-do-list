@@ -33,9 +33,18 @@ h2{
     margin: 10px auto;
 }
 
-.addtolist input{
-    width: 88%;
+.addtolist input[type="text"]{
+    width: 70%;
     padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #c8f7f1;
+    outline: none;
+}
+
+.addtolist input[type="time"]{
+    
+    padding: 8px;
     border: none;
     border-radius: 5px;
     background: #c8f7f1;
