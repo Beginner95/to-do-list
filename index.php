@@ -15,7 +15,7 @@
 <div class="addtolist">
     <div class="add">
         <input type="text" id="task" name="add" placeholder="Введите наименование задачи">
-        <input type="time" name="time">
+        <input type="time" name="time" id="time">
         <button onclick="newElement()" id="add">Добавить</button>
     </div>
 </div>
