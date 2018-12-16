@@ -13,7 +13,11 @@
 <hr>
 <p class="quote">Жизнь может казаться ошеломительной, но ей не обязательно такой быть. To do list позволяет отслеживать все задачи в одном месте, чтобы вам было проще выполнять задуманное, сохраняя душевный покой.</p>
 <div class="addtolist">
-    <div class="add"><input type="text" id="task" name="add" placeholder="Введите наименование задачи"><button onclick="newElement()" id="add">Добавить</button></div>
+    <div class="add">
+        <input type="text" id="task" name="add" placeholder="Введите наименование задачи">
+        <input type="time" name="time">
+        <button onclick="newElement()" id="add">Добавить</button>
+    </div>
 </div>
 <ul class="todolist" id="list">
     
