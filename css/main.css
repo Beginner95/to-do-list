@@ -34,7 +34,7 @@ h2{
 }
 
 .addtolist input[type="text"]{
-    width: 70%;
+    width: 76.7%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -43,12 +43,12 @@ h2{
 }
 
 .addtolist input[type="time"]{
-    
-    padding: 8px;
+    padding: 8px 8px 7px 8px;
     border: none;
     border-radius: 5px;
     background: #c8f7f1;
     outline: none;
+    margin-left: 7px;
 }
 
 .addtolist button{
