@@ -24,8 +24,9 @@ list.addEventListener('click', function(e) {
 }, false);
 
 function newElement() {
-    let li = cE("li");
-    let inputValue = getId("task").value;
+    let li = cE('li');
+    let inputValue = getId('task').value;
+    let time_for_task = getId('time').value;
     let task = cTN(inputValue);
     let title = cE('span');
     let date = cE('span');
@@ -44,22 +45,29 @@ function newElement() {
     
     
     if (inputValue === '') {
-        alert("You must write something!");
+        alert('You must write a task!');
     } else {
-        getId("list").appendChild(li);
+        getId('list').appendChild(li);
     }
     
-    getId("task").value = "";
+    if (time_for_task === '') {
+        alert('You must write time for task!');
+    } else {
+        getId('time');
+    }
+    
+    getId('task').value = '';
+    getId('time').value = '';
 
-    let i = cE("i");
-    i.className = "fa fa-trash-o close";
+    let i = cE('i');
+    i.className = 'fa fa-trash-o close';
     li.appendChild(i);
 
     for (let i = 0; i < close.length; i++) {
         close[i].onclick = function() {
             let div = this.parentElement;
             removeTask(div);
-            div.style.display = "none";
+            div.style.display = 'none';
         }
     }
 }
