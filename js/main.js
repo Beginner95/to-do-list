@@ -1,5 +1,6 @@
 var myNodelist = getETN("LI");
 var list = qS('#list');
+var showingTooltip;
 
 for (let i = 0; i < myNodelist.length; i++) {
     let span = cE("i");
@@ -116,4 +117,52 @@ function cTN(cTN){
 
 function qS(qS){
     return document.querySelector(qS);
+}
+
+document.onmouseover = function(e) {
+    let target = e.target;
+
+    while (target !== this) {
+        var tooltip = target.getAttribute('data-tooltip');
+        if (tooltip) break;
+        target = target.parentNode;
+    }
+
+    if (!tooltip) return;
+
+    showingTooltip = showTooltip(tooltip, target);
+}
+
+document.onmouseout = function() {
+    if (showingTooltip) {
+        document.body.removeChild(showingTooltip);
+        showingTooltip = false;
+    }
+}
+
+
+function showTooltip(text, elem) {
+    
+    let tooltipElem = cE('div');
+    tooltipElem.className = 'tooltip';
+    tooltipElem.innerHTML = text;
+    document.body.appendChild(tooltipElem);
+
+    let coords = elem.getBoundingClientRect();
+
+    let left = coords.left + (elem.offsetWidth - tooltipElem.offsetWidth) / 2;
+    if (left < 0) {
+        left = 0; 
+    }
+
+    let top = coords.top - tooltipElem.offsetHeight - 5;
+    
+    if (top < 0) {
+        top = coords.top + elem.offsetHeight + 5;
+    }
+
+    tooltipElem.style.left = left + 'px';
+    tooltipElem.style.top = top + 'px';
+
+    return tooltipElem;
 }
