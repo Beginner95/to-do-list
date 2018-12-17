@@ -27,8 +27,10 @@ list.addEventListener('click', function(e) {
 function newElement() {
     let li = cE('li');
     let inputValue = getId('task').value;
-    let time_for_task = getId('time').value;
+    let timeForTask = getId('time').value;
     let task = cTN(inputValue);
+    let time = cTN('Время на выполнения задачи ' + timeForTask);
+    let timeTag = cE('span');
     let title = cE('span');
     let date = cE('span');
     let done = cE('div');
@@ -36,22 +38,28 @@ function newElement() {
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
+    timeTag.className = 'timeclass';
     done.className = 'done fa';
     li.appendChild(title);
     title.appendChild(task);
     li.appendChild(done);
     li.appendChild(date);
+    li.appendChild(timeTag);
+    timeTag.appendChild(time);
+    
+    
+    
+    
     
     date.appendChild(cTN(formatDate(new Date())));
     
     
     if (inputValue === '') {
         alert('You must write a task!');
-    } else if (time_for_task === '') {
+    } else if (timeForTask === '') {
         alert('You must write time for task!');
     } else {
-        getId('list').appendChild(li);
-        getId('time');
+        list.appendChild(li);
     }
     
     getId('task').value = '';
