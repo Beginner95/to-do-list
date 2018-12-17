@@ -47,13 +47,10 @@ function newElement() {
     
     if (inputValue === '') {
         alert('You must write a task!');
-    } else {
-        getId('list').appendChild(li);
-    }
-    
-    if (time_for_task === '') {
+    } else if (time_for_task === '') {
         alert('You must write time for task!');
     } else {
+        getId('list').appendChild(li);
         getId('time');
     }
     
