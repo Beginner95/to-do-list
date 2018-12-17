@@ -96,6 +96,11 @@ h2{
     font: 12px Verdana, sans-serif;
 }
 
+.timeclass{
+    margin-left: 100px;
+    font: 12px Verdana, sans-serif;
+}
+
 .done{
     float: left;
     width: 13px;
