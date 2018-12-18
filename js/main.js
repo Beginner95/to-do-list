@@ -41,6 +41,8 @@ function newElement() {
     let date = cE('span');
     let done = cE('div');
     let play = cE('i');
+    let progress = cE('progress');
+    
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
@@ -54,6 +56,7 @@ function newElement() {
     li.appendChild(date);
     li.appendChild(timeTag);
     timeTag.appendChild(time);
+    li.appendChild(progress);
     
     date.appendChild(cTN(formatDate(new Date())));
     
@@ -79,10 +82,14 @@ function newElement() {
             div.style.display = 'none';
         }
     }
-    start();
 }
 
-function startTask(startTime) {
+function start(){
+    let minutes = Number(qS('.timeclass').innerHTML.replace(/\D+/g,""));
+    startTask(minutes * 60);
+}
+
+function startTask(startTime){
     let time = startTime;
     let min = parseInt(time / 60);
     if ( min < 1 ) min = 0;
@@ -114,7 +121,7 @@ function removeTask(i){
     list.removeChild(i);
 }
 
-function formatDate(date) {
+function formatDate(date){
 
     let dd = date.getDate();
     if (dd < 10) dd = '0' + dd;
