@@ -20,8 +20,14 @@ for (let i = 0; i < close.length; i++) {
 list.addEventListener('click', function(e) {
     if (e.target.tagName === 'DIV') {
         e.target.parentNode.classList.toggle('checked');
-        e.target.classList.toggle('fa-check')
+        e.target.classList.toggle('fa-check');
     }
+    
+    if (e.target.className === 'fa fa-play-circle-o') {
+        e.target.classList.toggle('fa-stop-circle-o');
+        start();
+    }
+    
 }, false);
 
 function newElement() {
@@ -34,15 +40,17 @@ function newElement() {
     let title = cE('span');
     let date = cE('span');
     let done = cE('div');
-    
+    let play = cE('i');
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
     timeTag.className = 'timeclass';
     done.className = 'done fa';
+    play.className = 'fa fa-play-circle-o';
     li.appendChild(title);
     title.appendChild(task);
     li.appendChild(done);
+    li.appendChild(play);
     li.appendChild(date);
     li.appendChild(timeTag);
     timeTag.appendChild(time);
@@ -71,6 +79,7 @@ function newElement() {
             div.style.display = 'none';
         }
     }
+    start();
 }
 
 function startTask(startTime) {
