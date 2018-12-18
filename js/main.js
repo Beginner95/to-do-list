@@ -29,7 +29,7 @@ function newElement() {
     let inputValue = getId('task').value;
     let timeForTask = getId('time').value;
     let task = cTN(inputValue);
-    let time = cTN('Время на выполнения задачи ' + timeForTask);
+    let time = cTN('Время на выполнения задачи ' + timeForTask + ' мин');
     let timeTag = cE('span');
     let title = cE('span');
     let date = cE('span');
@@ -47,12 +47,7 @@ function newElement() {
     li.appendChild(timeTag);
     timeTag.appendChild(time);
     
-    
-    
-    
-    
     date.appendChild(cTN(formatDate(new Date())));
-    
     
     if (inputValue === '') {
         alert('You must write a task!');
@@ -75,6 +70,34 @@ function newElement() {
             removeTask(div);
             div.style.display = 'none';
         }
+    }
+}
+
+function startTask(startTime) {
+    let time = startTime;
+    let min = parseInt(time / 60);
+    if ( min < 1 ) min = 0;
+    time = parseInt(time - min * 60);
+    if ( min < 10 ) min = '0'+min;
+    
+    let seconds = time;
+    
+    if ( seconds < 10 ) seconds = '0'+seconds;
+    //отрисовываем время
+    //Сделаю убывающий прогрес бар
+    //console.log('Осталось времени- ' + min + ' мин ' + seconds + ' секунд');
+    
+    startTime--;
+    
+    if ( startTime  >= 0 ) {
+        stopTimer  =  setTimeout(function(){
+            startTask(startTime); 
+        }, 1000);
+    } else {
+        //Время вышло задача не выполнена или выполнена
+        /**
+        * code
+        */
     }
 }
 
@@ -144,7 +167,6 @@ document.onmouseout = function() {
         showingTooltip = false;
     }
 }
-
 
 function showTooltip(text, elem) {
     
