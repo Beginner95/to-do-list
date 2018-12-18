@@ -15,7 +15,7 @@
 <div class="addtolist">
     <div class="add">
         <input type="text" id="task" name="add" data-tooltip="Введите наименование задачи которую собираетесь выполнить">
-        <input type="time" name="time" id="time" data-tooltip="Укажите время в течении которого задача будет выполнена">
+        <input type="number" max="60" min="3" name="time" id="time" value="3" data-tooltip="Укажите время в течении которого задача будет выполнена не менее 3 минут и не более 60 минут">
         <button onclick="newElement()" id="add">Добавить</button>
     </div>
 </div>
