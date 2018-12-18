@@ -107,7 +107,7 @@ h2{
     height: 12px;
     padding: 2px;
     border: 2px solid #fff;
-    margin: 5px 50px 0 0;
+    margin: 5px 20px 0 0;
     cursor: pointer;
 }
 
@@ -118,7 +118,13 @@ h2{
 }
 
 .fa{
-    font-size: 14px !important;
+    font-size: 16px !important;
+}
+
+.fa-play-circle-o{
+    margin: 5px 20px 0 0;
+    cursor: pointer;
+    font-size: 20px !important;
 }
 
 .checked{
