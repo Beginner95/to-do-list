@@ -43,6 +43,8 @@ function newElement() {
     let play = cE('i');
     let progress = cE('progress');
     
+    progress.max = timeForTask;
+    progress.value = '';
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
