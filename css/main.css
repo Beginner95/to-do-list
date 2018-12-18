@@ -34,7 +34,7 @@ h2{
 }
 
 .addtolist input[type="text"]{
-    width: 76.7%;
+    width: 77.99%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -42,8 +42,8 @@ h2{
     outline: none;
 }
 
-.addtolist input[type="time"]{
-    padding: 8px 8px 7px 8px;
+.addtolist input[type="number"]{
+    padding: 10px 8px;
     border: none;
     border-radius: 5px;
     background: #c8f7f1;
