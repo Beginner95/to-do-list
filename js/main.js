@@ -44,6 +44,7 @@ function newElement() {
     let progress = cE('progress');
     
     progress.max = timeForTask;
+    progress.id = 'progress';
     progress.value = '';
     title.className = 'title';
     li.className = 'box';
@@ -101,6 +102,7 @@ function startTask(startTime){
     let seconds = time;
     
     if ( seconds < 10 ) seconds = '0'+seconds;
+    
     //отрисовываем время
     //Сделаю убывающий прогрес бар
     //console.log('Осталось времени- ' + min + ' мин ' + seconds + ' секунд');
