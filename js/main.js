@@ -54,10 +54,10 @@ function newElement() {
     li.appendChild(title);
     title.appendChild(task);
     li.appendChild(done);
-    li.appendChild(play);
     li.appendChild(date);
     li.appendChild(timeTag);
     timeTag.appendChild(time);
+    li.appendChild(play);
     li.appendChild(progress);
     
     date.appendChild(cTN(formatDate(new Date())));
