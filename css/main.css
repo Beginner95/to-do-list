@@ -97,7 +97,7 @@ h2{
 }
 
 .timeclass{
-    margin-left: 100px;
+    margin-left: 70px;
     font: 12px Verdana, sans-serif;
 }
 
@@ -107,7 +107,7 @@ h2{
     height: 12px;
     padding: 2px;
     border: 2px solid #fff;
-    margin: 5px 20px 0 0;
+    margin: 5px 35px 0 0;
     cursor: pointer;
 }
 
@@ -122,7 +122,7 @@ h2{
 }
 
 .fa-play-circle-o{
-    margin: 5px 20px 0 0;
+    margin: 6px 25px 0 40px;
     cursor: pointer;
     font-size: 20px !important;
 }
@@ -142,4 +142,10 @@ h2{
   color: #333;
   background: #fff;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+progress {
+    height:20px;
+    width: 250px;
+    margin: 6px 0 0 10px;
 }
