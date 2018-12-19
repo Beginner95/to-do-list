@@ -43,7 +43,7 @@ function newElement() {
     let play = cE('i');
     let progress = cE('progress');
     
-    progress.max = timeForTask;
+    progress.max = timeForTask * 60;
     progress.id = 'progress';
     progress.value = '';
     title.className = 'title';
