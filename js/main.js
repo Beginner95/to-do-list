@@ -41,10 +41,10 @@ function newElement() {
     let date = cE('span');
     let done = cE('div');
     let play = cE('i');
-    let progress = cE('progress');
+    let progress = cE('div');
     
-    progress.max = timeForTask * 60;
-    progress.id = 'progress';
+    progress.id = timeForTask * 60;
+    progress.className = 'progress-bar';
     progress.value = '';
     title.className = 'title';
     li.className = 'box';
@@ -88,15 +88,17 @@ function newElement() {
 }
 
 function start(){
-    let minutes = Number(qS('.timeclass').innerHTML.replace(/\D+/g,""));
-    startTask(minutes * 60);
+    startTask(getId('progress').max);
 }
 
 function startTask(startTime){
-    let time = startTime;
+    let time = startTime; 
     let min = parseInt(time / 60);
+    
     if ( min < 1 ) min = 0;
+    
     time = parseInt(time - min * 60);
+    
     if ( min < 10 ) min = '0'+min;
     
     let seconds = time;
@@ -106,8 +108,13 @@ function startTask(startTime){
     //отрисовываем время
     //Сделаю убывающий прогрес бар
     //console.log('Осталось времени- ' + min + ' мин ' + seconds + ' секунд');
+    //startTime.value = startTime;
+    getId('status-progress').innerHTML = min + ' мин ' + seconds + ' секунд';
+    startTime.innerHTML = 'Осталось времени- ' + min + ' мин ' + seconds + ' секунд';
     
     startTime--;
+    
+    console.log(startTime);
     
     if ( startTime  >= 0 ) {
         stopTimer  =  setTimeout(function(){

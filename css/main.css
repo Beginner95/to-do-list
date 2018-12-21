@@ -144,8 +144,26 @@ h2{
   box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
 }
 
-progress {
-    height:20px;
-    width: 250px;
-    margin: 6px 0 0 10px;
+.progress-bar{
+    height:15px;
+    line-height:40px;
+    width:275px;
+    position:relative;    
+    text-align:center;
+    color:black;
+    background: #ddd;
+    display: inline-table;
+}
+.progress-bar span{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    background-color:gray;
+}
+
+.progress-bar span:last-child{
+    background-color:green;
+    color:white;
+    clip:rect(0 0px 40px 0);
 }
