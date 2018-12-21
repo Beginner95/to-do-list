@@ -21,7 +21,6 @@
 </div>
 <ul class="todolist" id="list">
 </ul>
-<span id="status-progress"></span>
 </div>
 <script src="/js/fontawesome.min.js"></script>
 <script src="/js/main.js"></script>
