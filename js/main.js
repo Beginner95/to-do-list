@@ -43,7 +43,8 @@ function newElement() {
     let play = cE('i');
     let progress = cE('div');
     
-    progress.id = timeForTask * 60;
+    //progress.setAttribute = ('data-time', timeForTask * 60);
+    progress.dataset.time = timeForTask * 60;
     progress.className = 'progress-bar';
     progress.value = '';
     title.className = 'title';
@@ -88,7 +89,7 @@ function newElement() {
 }
 
 function start(){
-    startTask(getId('progress').id);
+    startTask(qS('.progress-bar').getAttribute('data-time'));
 }
 
 function startTask(startTime){
@@ -109,8 +110,8 @@ function startTask(startTime){
     //Сделаю убывающий прогрес бар
     //console.log('Осталось времени- ' + min + ' мин ' + seconds + ' секунд');
     //startTime.value = startTime;
-    getId('status-progress').innerHTML = min + ' мин ' + seconds + ' секунд';
-    startTime.innerHTML = 'Осталось времени- ' + min + ' мин ' + seconds + ' секунд';
+    //getId('status-progress').innerHTML = min + ' мин ' + seconds + ' секунд';
+    //startTime.innerHTML = 'Осталось времени- ' + min + ' мин ' + seconds + ' секунд';
     
     startTime--;
     
