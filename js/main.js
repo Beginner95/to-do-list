@@ -43,10 +43,10 @@ function newElement() {
     let play = cE('i');
     let progress = cE('div');
     
-    //progress.setAttribute = ('data-time', timeForTask * 60);
     progress.dataset.time = timeForTask * 60;
     progress.className = 'progress-bar';
     progress.value = '';
+    
     title.className = 'title';
     li.className = 'box';
     date.className = 'date';
@@ -61,6 +61,9 @@ function newElement() {
     timeTag.appendChild(time);
     li.appendChild(play);
     li.appendChild(progress);
+    
+    progress.appendChild(cE('span'));
+    progress.appendChild(cE('span'));
     
     date.appendChild(cTN(formatDate(new Date())));
     
@@ -106,22 +109,18 @@ function startTask(startTime){
     
     if ( seconds < 10 ) seconds = '0'+seconds;
     
-    //отрисовываем время
-    //Сделаю убывающий прогрес бар
-    //console.log('Осталось времени- ' + min + ' мин ' + seconds + ' секунд');
-    //startTime.value = startTime;
-    //getId('status-progress').innerHTML = min + ' мин ' + seconds + ' секунд';
-    //startTime.innerHTML = 'Осталось времени- ' + min + ' мин ' + seconds + ' секунд';
+    qSA(".progress-bar span")[0].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
+    qSA(".progress-bar span")[1].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
+    qS(".progress-bar").lastChild.style.clip = "rect(0 " + startTime * 2 + "px 40px 0)";    
     
     startTime--;
-    
-    console.log(startTime);
     
     if ( startTime  >= 0 ) {
         stopTimer  =  setTimeout(function(){
             startTask(startTime); 
         }, 1000);
     } else {
+        qSA(".progress-bar span")[0].innerHTML = 'Время закончилось';
         //Время вышло задача не выполнена или выполнена
         /**
         * code
@@ -173,6 +172,10 @@ function cTN(cTN){
 
 function qS(qS){
     return document.querySelector(qS);
+}
+
+function qSA(qSA){
+    return document.querySelectorAll(qSA);
 }
 
 document.onmouseover = function(e) {
