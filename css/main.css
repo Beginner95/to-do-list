@@ -145,18 +145,18 @@ h2{
 }
 
 .progress-bar{
-    height:15px;
-    line-height:40px;
-    width:275px;
-    position:relative;    
-    text-align:center;
-    color:black;
+    font-size: 11px;
+    line-height: 15px;
+    width: 275px;
+    position: relative;    
+    text-align: center;
+    color: black;
     background: #ddd;
     display: inline-table;
 }
 .progress-bar span{
     position:absolute;
-    top:0;
+    top: -15px;
     left:0;
     width:100%;
     background-color:gray;
