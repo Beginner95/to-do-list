@@ -88,7 +88,7 @@ function newElement() {
 }
 
 function start(){
-    startTask(getId('progress').max);
+    startTask(getId('progress').id);
 }
 
 function startTask(startTime){
