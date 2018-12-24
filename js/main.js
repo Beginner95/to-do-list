@@ -24,8 +24,22 @@ list.addEventListener('click', function(e) {
     }
     
     if (e.target.className === 'fa fa-play-circle-o') {
-        e.target.classList.toggle('fa-stop-circle-o');
-        start();
+        let progress = getECN('progress-bar');
+        console.log(progress);
+        for (let i = 0; i < progress.length; i++) {
+            progress[i].onclick = function(event) {
+                e.target.classList.toggle('fa-stop-circle-o');
+                console.log(event[i]);
+                console.log(qS('.progress-bar')[i]);
+                start(event);
+                //console.log(div);
+                //div.style.display = "none";
+                //event.target.classList.toggle('fa-stop-circle-o')
+            }
+        }
+        
+        /*e.target.classList.toggle('fa-stop-circle-o');
+        start();*/
     }
     
 }, false);
@@ -91,7 +105,9 @@ function newElement() {
     }
 }
 
-function start(){
+function start(i){
+    //console.log(qS('.progress-bar'));
+    //console.log(qS('.progress-bar').getAttribute('data-time'));
     startTask(qS('.progress-bar').getAttribute('data-time'));
 }
 
