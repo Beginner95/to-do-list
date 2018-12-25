@@ -23,23 +23,9 @@ list.addEventListener('click', function(e) {
         e.target.classList.toggle('fa-check');
     }
     
-    if (e.target.className === 'fa fa-play-circle-o') {
-        let progress = getECN('progress-bar');
-        console.log(progress);
-        for (let i = 0; i < progress.length; i++) {
-            progress[i].onclick = function(event) {
-                e.target.classList.toggle('fa-stop-circle-o');
-                console.log(event[i]);
-                console.log(qS('.progress-bar')[i]);
-                start(event);
-                //console.log(div);
-                //div.style.display = "none";
-                //event.target.classList.toggle('fa-stop-circle-o')
-            }
-        }
-        
-        /*e.target.classList.toggle('fa-stop-circle-o');
-        start();*/
+    if (e.target.className === 'fa fa-play-circle-o') {     
+        e.target.classList.toggle('fa-stop-circle-o');
+        start(e.toElement.nextElementSibling);
     }
     
 }, false);
@@ -105,13 +91,11 @@ function newElement() {
     }
 }
 
-function start(i){
-    //console.log(qS('.progress-bar'));
-    //console.log(qS('.progress-bar').getAttribute('data-time'));
-    startTask(qS('.progress-bar').getAttribute('data-time'));
+function start(tag){
+    startTask(tag.getAttribute('data-time'), tag);
 }
 
-function startTask(startTime){
+function startTask(startTime, tag){
     let time = startTime; 
     let min = parseInt(time / 60);
     
@@ -119,21 +103,21 @@ function startTask(startTime){
     
     time = parseInt(time - min * 60);
     
-    if ( min < 10 ) min = '0'+min;
+    if ( min < 10 ) min = '0' + min;
     
     let seconds = time;
     
-    if ( seconds < 10 ) seconds = '0'+seconds;
+    if ( seconds < 10 ) seconds = '0' + seconds;
     
-    qSA(".progress-bar span")[0].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
-    qSA(".progress-bar span")[1].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
-    qS(".progress-bar").lastChild.style.clip = "rect(0 " + startTime * 2 + "px 40px 0)";    
+    tag.childNodes[0].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
+    tag.childNodes[1].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
+    tag.lastChild.style.clip = "rect(0 " + startTime * 2 + "px 40px 0)"; 
     
     startTime--;
     
     if ( startTime  >= 0 ) {
         stopTimer  =  setTimeout(function(){
-            startTask(startTime); 
+            startTask(startTime, tag); 
         }, 1000);
     } else {
         qSA(".progress-bar span")[0].innerHTML = 'Время закончилось';
@@ -239,4 +223,8 @@ function showTooltip(text, elem) {
     tooltipElem.style.top = top + 'px';
 
     return tooltipElem;
+}
+
+function c(str){
+    console.log(str);
 }
