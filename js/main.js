@@ -230,12 +230,16 @@ function c(str){
     console.log(str);
 }
 
+function showCover() {
+    let coverDiv = cE('div');
+    coverDiv.id = 'cover-div';
+    document.body.appendChild(coverDiv);
+}
+
 function showPrompt(text) {
     showCover();
     let container = getId('prompt-form-container');
     getId('prompt-message').innerHTML = text;
-    
-    
     
     getId('yes').onclick = function(e) {
         hideCover();
