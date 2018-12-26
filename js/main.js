@@ -236,6 +236,10 @@ function showCover() {
     document.body.appendChild(coverDiv);
 }
 
+function hideCover() {
+    document.body.removeChild(getId('cover-div'));
+}
+
 function showPrompt(text) {
     showCover();
     let container = getId('prompt-form-container');
