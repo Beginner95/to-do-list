@@ -21,6 +21,14 @@
 </div>
 <ul class="todolist" id="list">
 </ul>
+
+<div id="prompt-form-container">
+    <div id="prompt-form">
+        <div id="prompt-message"></div>
+        <button id="yes">Да</button>
+        <button id="no">Нет</button>
+    </div>
+</div>
 </div>
 <script src="/js/fontawesome.min.js"></script>
 <script src="/js/main.js"></script>
