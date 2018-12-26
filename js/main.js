@@ -118,9 +118,10 @@ function startTask(startTime, tag){
     if ( startTime  >= 0 ) {
         stopTimer  =  setTimeout(function(){
             startTask(startTime, tag); 
-        }, 1000);
+        }, 10);
     } else {
-        qSA(".progress-bar span")[0].innerHTML = 'Время закончилось';
+        tag.childNodes[0].innerHTML = 'Время закончилось';
+        showPrompt('Вы выполнили задачу?');
         //Время вышло задача не выполнена или выполнена
         /**
         * code
@@ -227,4 +228,27 @@ function showTooltip(text, elem) {
 
 function c(str){
     console.log(str);
+}
+
+function showPrompt(text) {
+    showCover();
+    let container = getId('prompt-form-container');
+    getId('prompt-message').innerHTML = text;
+    
+    
+    
+    getId('yes').onclick = function(e) {
+        hideCover();
+        container.style.display = 'none';
+        /**
+        *Надо вызвать функцию для отметки выполнения задачи
+        */
+    };
+    
+    getId('no').onclick = function() {
+        hideCover();
+        container.style.display = 'none';
+    };
+    
+    container.style.display = 'block';
 }
