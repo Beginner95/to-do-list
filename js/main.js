@@ -118,10 +118,10 @@ function startTask(startTime, tag){
     if ( startTime  >= 0 ) {
         stopTimer  =  setTimeout(function(){
             startTask(startTime, tag); 
-        }, 1000);
+        }, 10);
     } else {
         tag.childNodes[0].innerHTML = 'Время закончилось';
-        showPrompt('Вы выполнили задачу?');
+        showPrompt('Вы выполнили задачу?', tag);
         //Время вышло задача не выполнена или выполнена
         /**
         * code
@@ -259,4 +259,14 @@ function showPrompt(text) {
     };
     
     container.style.display = 'block';
+}
+
+function eventFire(el, etype){
+    if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+    } else {
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+    }
 }
