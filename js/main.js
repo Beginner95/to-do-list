@@ -121,7 +121,7 @@ function startTask(startTime, tag){
         }, 10);
     } else {
         tag.childNodes[0].innerHTML = 'Время закончилось';
-        showPrompt('Вы выполнили задачу?', tag);
+        showPrompt('Вы выполнили задачу?');
         //Время вышло задача не выполнена или выполнена
         /**
         * code
@@ -241,13 +241,16 @@ function hideCover() {
 }
 
 function showPrompt(text) {
+    soundTask('task');
     showCover();
     let container = getId('prompt-form-container');
     getId('prompt-message').innerHTML = text;
     
     getId('yes').onclick = function(e) {
+        eventFire(qS('.done'), 'click');
         hideCover();
         container.style.display = 'none';
+        soundTask('lesson');
         /**
         *Надо вызвать функцию для отметки выполнения задачи
         */
@@ -265,8 +268,14 @@ function eventFire(el, etype){
     if (el.fireEvent) {
         el.fireEvent('on' + etype);
     } else {
-        var evObj = document.createEvent('Events');
+        let evObj = document.createEvent('Events');
         evObj.initEvent(etype, true, false);
         el.dispatchEvent(evObj);
     }
+}
+
+function soundTask(name){
+    let audio = new Audio();
+    audio.src = '/sounds/' + name + '.mp3';
+    audio.autoplay = true;
 }
