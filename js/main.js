@@ -118,7 +118,7 @@ function startTask(startTime, tag){
     if ( startTime  >= 0 ) {
         stopTimer  =  setTimeout(function(){
             startTask(startTime, tag); 
-        }, 1);
+        }, 1000);
     } else {
         tag.childNodes[0].innerHTML = 'Время закончилось';
         showPrompt('Вы выполнили задачу?', tag);
@@ -241,25 +241,22 @@ function hideCover() {
 }
 
 function showPrompt(text, tag) {
-    c();
     soundTask('task');
     showCover();
     let container = getId('prompt-form-container');
     getId('prompt-message').innerHTML = text;
-    
     getId('yes').onclick = function(e) {
         eventFire(tag.parentNode.childNodes[1], 'click');
         hideCover();
         container.style.display = 'none';
         soundTask('lesson');
-        /**
-        *Надо вызвать функцию для отметки выполнения задачи
-        */
     };
     
     getId('no').onclick = function() {
+        eventFire(tag.parentNode.childNodes[6], 'click');
         hideCover();
         container.style.display = 'none';
+        soundTask('error_task');
     };
     
     container.style.display = 'block';
