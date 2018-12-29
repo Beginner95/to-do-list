@@ -96,9 +96,9 @@ function start(tag){
 }
 
 function startTask(startTime, tag){
+    volumeSecond();
     let time = startTime; 
     let min = parseInt(time / 60);
-    
     if ( min < 1 ) min = 0;
     
     time = parseInt(time - min * 60);
@@ -106,7 +106,6 @@ function startTask(startTime, tag){
     if ( min < 10 ) min = '0' + min;
     
     let seconds = time;
-    
     if ( seconds < 10 ) seconds = '0' + seconds;
     
     tag.childNodes[0].innerHTML = 'Осталось ' + min + ' мин ' + seconds + ' секунд';
@@ -277,3 +276,25 @@ function soundTask(name){
     audio.src = '/sounds/' + name + '.mp3';
     audio.autoplay = true;
 }
+function volumeSecond(){
+    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let oscillator = audioCtx.createOscillator();
+    let gainNode = audioCtx.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    gainNode.gain.value = 0.3;
+    oscillator.frequency.value = 4126;
+    oscillator.type = 'sawtooth';
+
+    oscillator.start();
+  
+    setTimeout(
+      function(){
+        oscillator.stop();
+      }, 
+      100
+    );  
+}
+
