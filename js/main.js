@@ -128,6 +128,17 @@ function startTask(startTime, tag){
     }
 }
 
+function saveTasks(){
+    var tasks = {};	
+    for (let i = 1; i < list.childNodes.length; i++) {
+	tasks[i] = {
+               title: list.childNodes[i].childNodes[0].innerText,
+	       date: list.childNodes[i].childNodes[2].innerText
+        }
+    }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
 function removeTask(i){
     list.removeChild(i);
 }
