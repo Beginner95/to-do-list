@@ -89,6 +89,8 @@ function newElement() {
             div.style.display = 'none';
         }
     }
+    
+    saveTasks();
 }
 
 function start(tag){
