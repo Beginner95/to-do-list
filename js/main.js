@@ -1,5 +1,11 @@
 var myNodelist = getETN("LI");
 var list = qS('#list');
+var tasks = JSON.parse(localStorage.getItem('tasks'));
+
+for (let key in tasks){
+    c(tasks[key].title + ' ' + tasks[key].date);
+}
+
 var showingTooltip;
 
 for (let i = 0; i < myNodelist.length; i++) {
@@ -289,6 +295,7 @@ function soundTask(name){
     audio.src = '/sounds/' + name + '.mp3';
     audio.autoplay = true;
 }
+
 function volumeSecond(){
     let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     let oscillator = audioCtx.createOscillator();
