@@ -3,7 +3,7 @@ var list = qS('#list');
 var tasks = JSON.parse(localStorage.getItem('tasks'));
 
 for (let key in tasks){
-    c(tasks[key].title + ' ' + tasks[key].date);
+    //c(tasks[key].title + ' ' + tasks[key].date);
 }
 
 var showingTooltip;
@@ -27,6 +27,7 @@ list.addEventListener('click', function(e) {
     if (e.target.tagName === 'DIV') {
         e.target.parentNode.classList.toggle('checked');
         e.target.classList.toggle('fa-check');
+        saveTasks();
     }
     
     if (e.target.className === 'fa fa-play-circle-o') {     
@@ -92,6 +93,7 @@ function newElement() {
         close[i].onclick = function() {
             let div = this.parentElement;
             removeTask(div);
+            saveTasks();
             div.style.display = 'none';
         }
     }
@@ -139,9 +141,12 @@ function startTask(startTime, tag){
 function saveTasks(){
     var tasks = {};	
     for (let i = 1; i < list.childNodes.length; i++) {
-	tasks[i] = {
-               title: list.childNodes[i].childNodes[0].innerText,
-	       date: list.childNodes[i].childNodes[2].innerText
+        if (list.childNodes[i].childNodes[1].className == 'done fa') {
+            tasks[i] = {
+                title: list.childNodes[i].childNodes[0].innerText,
+                status: list.childNodes[i].childNodes[1].innerText,
+                date: list.childNodes[i].childNodes[2].innerText
+            }
         }
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
