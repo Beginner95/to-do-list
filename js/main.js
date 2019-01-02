@@ -144,7 +144,6 @@ function saveTasks(){
         if (list.childNodes[i].childNodes[1].className == 'done fa') {
             tasks[i] = {
                 title: list.childNodes[i].childNodes[0].innerText,
-                status: list.childNodes[i].childNodes[1].innerText,
                 date: list.childNodes[i].childNodes[2].innerText
             }
         }
