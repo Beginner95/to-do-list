@@ -3,7 +3,7 @@ var list = qS('#list');
 var tasks = JSON.parse(localStorage.getItem('tasks'));
 
 for (let key in tasks){
-    //c(tasks[key].title + ' ' + tasks[key].date);
+    tasks[key].title + ' ' + tasks[key].date;
 }
 
 var showingTooltip;
@@ -142,9 +142,11 @@ function saveTasks(){
     var tasks = {};	
     for (let i = 1; i < list.childNodes.length; i++) {
         if (list.childNodes[i].childNodes[1].className == 'done fa') {
+            
             tasks[i] = {
                 title: list.childNodes[i].childNodes[0].innerText,
-                date: list.childNodes[i].childNodes[2].innerText
+                date: list.childNodes[i].childNodes[2].innerText,
+                time: list.childNodes[i].childNodes[5].dataset.time
             }
         }
     }
