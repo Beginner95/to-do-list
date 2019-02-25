@@ -1,9 +1,9 @@
 var myNodelist = getETN("LI");
 var list = qS('#list');
 var tasks = JSON.parse(localStorage.getItem('tasks'));
-
+console.log(tasks);
 for (let key in tasks){
-    tasks[key].title + ' ' + tasks[key].date;
+    tasks[key].title + ' ' + tasks[key].date + ' ' + tasks[key].time;
 }
 
 var showingTooltip;
