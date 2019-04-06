@@ -4,16 +4,13 @@ var tasks = JSON.parse(localStorage.getItem('tasks'));
 
 var html = '';
 for (let key in tasks){
-    html += '<li>' + tasks[key].title + ' ' + tasks[key].date + ' ' + tasks[key].time + '</li>';
+    html += '<li class="box"><span class="title">' + tasks[key].title + '</span><div class="done fa"></div><span class="date">' + tasks[key].date + '</span><span class="timeclass">Время на выполнения задачи  ' + tasks[key].time + '</span><i class="fa fa-play-circle-o"></i><div data-time="' + tasks[key].time + '" class="progress-bar"></div><i class="fa fa-trash-o close"></i></li>';
 }
-console.log(html);
+list.innerHTML = html;
+
 var showingTooltip;
 
-for (let i = 0; i < myNodelist.length; i++) {
-    let span = cE("i");
-    span.className = "fa fa-trash-o";
-    myNodelist[i].appendChild(span);
-}
+
 
 var close = getECN("close");
 
