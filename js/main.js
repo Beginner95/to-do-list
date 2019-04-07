@@ -4,7 +4,7 @@ var tasks = JSON.parse(localStorage.getItem('tasks'));
 
 var html = '';
 for (let key in tasks){
-    html += '<li class="box"><span class="title">' + tasks[key].title + '</span><div class="done fa"></div><span class="date">' + tasks[key].date + '</span><span class="timeclass">Время на выполнения задачи  ' + tasks[key].time + '</span><i class="fa fa-play-circle-o"></i><div data-time="' + tasks[key].time + '" class="progress-bar"><span></span><span></span></div><i class="fa fa-trash-o close"></i></li>';
+    html += '<li class="box"><span class="title">' + tasks[key].title + '</span><div class="done fa"></div><span class="date">' + tasks[key].date + '</span><span class="timeclass">Время на выполнения задачи  ' + (tasks[key].time / 60)+ ' мин</span><i class="fa fa-play-circle-o"></i><div data-time="' + tasks[key].time + '" class="progress-bar"><span></span><span></span></div><i class="fa fa-trash-o close"></i></li>';
 }
 list.innerHTML = html;
 
