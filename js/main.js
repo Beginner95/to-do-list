@@ -138,7 +138,7 @@ function startTask(startTime, tag){
 
 function saveTasks(){
     var tasks = {};	
-    for (let i = 1; i < list.childNodes.length; i++) {
+    for (let i = 0; i < list.childNodes.length; i++) {
         if (list.childNodes[i].childNodes[1].className == 'done fa') {
             
             tasks[i] = {
