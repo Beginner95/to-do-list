@@ -102,7 +102,7 @@ function start(tag){
 }
 
 function startTask(startTime, tag){
-    //volumeSecond();
+    volumeSecond();
     let time = startTime; 
     let min = parseInt(time / 60);
     if ( min < 1 ) min = 0;
